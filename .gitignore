@@ -1,0 +1,16 @@
+*.pt
+*.pth
+__pycache__
+.DS_Store
+*.h5
+data
+*.pgm
+.ipynb_checkpoints
+checkpoints
+checkpoint
+*.data*
+*.index*
+*ckpt*
+*tfevents*
+*.meta*
+*.mp4
