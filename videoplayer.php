@@ -34,7 +34,7 @@ function addWatchedVideo($src_current, $radValue, $duration) {
 function updateDatabase() {
     // connect to the database
     // $conn = mysqli_connect("wcetest-do-user-13153530-0.b.db.ondigitalocean.com","doadmin","AVNS_8WsUdQ7GU9RwUI5S9gd","DATA", 25060);
-    $conn = mysqli_connect("localhost","root","","DATA");
+    $conn = mysqli_connect("localhost","capsule","Malinim+59","endoscopy");
               
     // get the list of watched videos
     $watched_videos = $_SESSION['watched_videos'];
@@ -89,7 +89,7 @@ function nextVideo($notification) {
         $table_id = $_SESSION['id'];
         $sql = "UPDATE `userNote` SET `pass` = '1' WHERE `userNote`.`ID` = '$table_id'";
         // $conn = mysqli_connect("wcetest-do-user-13153530-0.b.db.ondigitalocean.com","doadmin","AVNS_8WsUdQ7GU9RwUI5S9gd","DATA", 25060);
-        $conn = mysqli_connect("localhost","root","","DATA");
+        $conn = mysqli_connect("localhost","capsule","Malinim+59","endoscopy");
               
         mysqli_query($conn, $sql);
         // check query is successful

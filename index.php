@@ -59,7 +59,7 @@
               $username = $_POST['username'];
               $password = $_POST['password'];
               // connect to the database
-              $conn = mysqli_connect("localhost","root","","DATA");
+              $conn = mysqli_connect("localhost","capsule","Malinim+59","endoscopy");
               // $conn = mysqli_connect("wcetest-do-user-13153530-0.b.db.ondigitalocean.com","tansy","AVNS_doKxqqz5IHiYyYSw_Jl","DATA",25060);
               // check the user is valid or not
               if ($conn->connect_error) {

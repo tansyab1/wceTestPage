@@ -15,7 +15,7 @@ if (!isset($_SESSION['username'])) {
   // $conn = mysqli_connect("remotemysql.com", "g3uw65oJMS", "x6sPplebaq", "g3uw65oJMS");
   // $conn = mysqli_connect("wcetest-do-user-13153530-0.b.db.ondigitalocean.com","doadmin","AVNS_8WsUdQ7GU9RwUI5S9gd","DATA", 25060);
               
-  $conn = mysqli_connect("localhost", "root", "", "DATA");
+  $conn = mysqli_connect("localhost","capsule","Malinim+59","endoscopy");
   // check the connection
   if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
@@ -23,7 +23,7 @@ if (!isset($_SESSION['username'])) {
   // get the username from the session
   $id = $_SESSION['id'];
   // create table for the user using id
-  $sql = "CREATE TABLE IF NOT EXISTS `DATA`.`$id` ( `id` INT NOT NULL AUTO_INCREMENT , `videoName` VARCHAR(255) NOT NULL , `value` VARCHAR(50) NOT NULL , `timeProcess` INT(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
+  $sql = "CREATE TABLE IF NOT EXISTS `endoscopy`.`$id` ( `id` INT NOT NULL AUTO_INCREMENT , `videoName` VARCHAR(255) NOT NULL , `value` VARCHAR(50) NOT NULL , `timeProcess` INT(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
   // $sql = "CREATE TABLE IF NOT EXISTS `DATA`.`$id` ( `id` INT NOT NULL AUTO_INCREMENT , `videoName` VARCHAR(255) NOT NULL , `value` VARCHAR(50) NOT NULL , `timeProcess` INT(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
   // check the table is created or not
   if (!mysqli_query($conn, $sql)) {
@@ -286,7 +286,7 @@ if (!isset($_SESSION['username'])) {
   // $db = mysqli_connect("remotemysql.com", "g3uw65oJMS", "x6sPplebaq", "g3uw65oJMS");
   // $db = mysqli_connect("wcetest-do-user-13153530-0.b.db.ondigitalocean.com","doadmin","AVNS_8WsUdQ7GU9RwUI5S9gd","DATA", 25060);
               
-  $db = mysqli_connect("localhost", "root", "", "DATA");
+  $db = mysqli_connect("localhost","capsule","Malinim+59","endoscopy");
   $sql = "SELECT * FROM userNote WHERE email = '$username'";
   $result = mysqli_query($db, $sql);
   $row = mysqli_fetch_assoc($result);

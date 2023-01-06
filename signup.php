@@ -128,7 +128,7 @@
           $agree = $_POST['agree'];
           
           // $conn = mysqli_connect("wcetest-do-user-13153530-0.b.db.ondigitalocean.com","doadmin","AVNS_8WsUdQ7GU9RwUI5S9gd","DATA", 25060);
-          $conn = mysqli_connect("localhost","root","","DATA");
+          $conn = mysqli_connect("localhost","capsule","Malinim+59","endoscopy");
               
           if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);

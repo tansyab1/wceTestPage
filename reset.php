@@ -22,7 +22,7 @@ function resetPassword($email)
     // connect to the database
     // $conn = mysqli_connect("wcetest-do-user-13153530-0.b.db.ondigitalocean.com","doadmin","AVNS_8WsUdQ7GU9RwUI5S9gd","DATA", 25060);
               
-    $conn = mysqli_connect("localhost","root","","DATA");
+    $conn = mysqli_connect("localhost","capsule","Malinim+59","endoscopy");
     // check if email is valid
     $sql = "SELECT * FROM `userNote` WHERE `email` = '$email'";
     $result = mysqli_query($conn, $sql);
