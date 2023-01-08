@@ -274,7 +274,7 @@ session_start();
 
     <h2> Alert </h2>
     <p>
-    Please "Play" the video and rate the video quality before proceeding to the "Next" video.
+      Please "Play" the video and rate the video quality before proceeding to the "Next" video.
     </p>
     <a onclick="closeAlert()">Close</a>
   </div>
