@@ -202,8 +202,8 @@ session_start();
           <br class="home-text04" />
           <span class="home-text05">
             Some people are 'colour vision deficient (CD' or 'colour blind' -
-            if this is your case, then please do not proceed. If you are unsure,
-            please check using an online CVD test such as:
+            if this is your case, then please do not proceed. To be sure of this,
+            please process the following Ishihara 38 plates test:
           </span>
           <br class="home-text06" />
           <span class="home-text07">
@@ -212,18 +212,18 @@ session_start();
           <br class="home-text08" />
           <br class="home-text09" />
           <span class="home-text10">
-            To the best of your knowledge, do you have
+            To the best of your knowledge and belief, do you accept
           </span>
-          <span class="home-text11">normal</span>
-          <span class="home-text12">colour vision?</span>
+          <span class="home-text11">to process</span>
+          <span class="home-text12">the Ishihara test?</span>
           <span></span>
           <span></span>
         </span>
-        <a href="/~tansy.nguyen/src/dataConfident/dataAnonymous.php" target="_parent"><button class="home-button button">Yes</button></a>
+        <a href="/~tansy.nguyen/src/ishihara_test/ishihara.php" target="_parent"><button class="home-button button">Yes</button></a>
         <span class="home-text15">
-          <span class="home-text16">I have</span>
-          <span class="home-text17">normal</span>
-          <span class="home-text18">colour vision</span>
+          <span class="home-text16">I accept</span>
+          <span class="home-text17">to</span>
+          <span class="home-text18">process I</span>
           <br />
         </span>
       </div>
