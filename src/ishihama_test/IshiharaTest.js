@@ -2,6 +2,11 @@ function nextImageTest() {
     // get the value of the image in visualTest.php
     var imageRef = document.getElementById('imageRef');
     var numExp = document.getElementById('numExp');
+    var num = document.querySelector("input").valueAsNumber;
+
+    // add value of num to array resultNum
+    $_SESSION['resultNum'].push(num);
+
 
     // show the numExp to console
     // console.log(numExp);
@@ -36,8 +41,28 @@ function nextImageTest() {
             // if the flag is true, the image is the last image and the button next is disabled, show the alert message 
             // and load the page videoPlayer.php
             if (flag == true) {
-                alert("Ishihara Test is finished, thank you for your participation. Please click OK to continue to the next step.");
-                window.location.href = "/~tansy.nguyen/src/dataConfident/dataAnonymous.php";
+                
+                // compare the resultNum with the resultNumCorrect
+                var resultNum = $_SESSION['resultNum'];
+                var result = $_SESSION['resultNumCorrect'];
+
+                // compart the resultNum with the result index by index and count the number of correct answers
+                var resultNumCorrect = 0;
+                for (var i = 0; i < resultNum.length; i++) {
+                    if (resultNum[i] == result[i]) {
+                        resultNumCorrect++;
+                    }
+                }
+
+                // if the accuracy is less than 70%, show the alert message and load the page videoPlayer.php
+                if (resultNumCorrect.length < 26) {
+                    alert("Your accuracy is less than 70%, could you please try again.");
+                    window.location.href = "/~tansy.nguyen/src/ishihama_test/ishiharaTest.php";
+                } else {
+                    alert("You have passed the Ishihara Test, thank you for your participation. Please click OK to continue to the next step.");
+                    window.location.href = "/~tansy.nguyen/src/dataConfident/dataAnonymous.php";
+                }
+                
             }
 
         }

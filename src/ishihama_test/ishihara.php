@@ -5,7 +5,14 @@ list($ref_images, $ref_folders) = getIshiharaImages();
 
 // session the current imageRef is the first image in the ref_images
 $_SESSION['imageIshihara'] = $ref_images[0];
+$_SESSION['imageIshiharalist'] = $ref_images;
 $_SESSION['imageIshiharaNumExp'] = 1;
+
+// create a array to store the result
+$_SESSION['resultNum'] = array();
+$_SESSION['resultNumCorrect'] = $ref_folders;
+// convert the array to number
+$_SESSION['resultNumCorrect'] = array_map('intval', $_SESSION['resultNumCorrect']);
 
 ?>
 <!DOCTYPE html>
