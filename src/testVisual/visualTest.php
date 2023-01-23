@@ -3,16 +3,25 @@ session_start();
 include 'getImage.php';
 
 // load the ref_images and dist_images
-list($ref_images, $dist_images) = getImages();
+list($dist_images,$dist_images_dir) = getImages();
 
 // session the current imageRef is the first image in the ref_images
-$_SESSION['imageRef'] = $ref_images[0];
+$_SESSION['imagelist'] = $dist_images;
+$_SESSION['imagelistdir'] = $dist_images_dir;
+
+list($patho, $kind) = getDistortion($_SESSION['imagelist'][0]);
+
+$_SESSION['patho'] = $patho;
+$_SESSION['type'] = $kind;
+
+// get first 4 images from the dist_images folder
 
 // find the image with the same name as the first image in the ref_images + 4 levels
-$_SESSION['imagelevel1'] = findImage($_SESSION['imageRef'], $dist_images, 1);
-$_SESSION['imagelevel2'] = findImage($_SESSION['imageRef'], $dist_images, 2);
-$_SESSION['imagelevel3'] = findImage($_SESSION['imageRef'], $dist_images, 3);
-$_SESSION['imagelevel4'] = findImage($_SESSION['imageRef'], $dist_images, 4);
+$_SESSION['imagelevel1'] = $_SESSION['imagelist'][0];
+$_SESSION['imagelevel2'] = $_SESSION['imagelist'][1];
+$_SESSION['imagelevel3'] = $_SESSION['imagelist'][2];
+$_SESSION['imagelevel4'] = $_SESSION['imagelist'][3];
+
 $_SESSION['imageNumExp'] = 1;
 
 ?>
@@ -150,7 +159,7 @@ $_SESSION['imageNumExp'] = 1;
             </div>
           </div>
         </div>
-        <span class="home-text3">distortion name:&nbsp;</span>
+        <span id="type" class="home-text3">Image: <?php echo $_SESSION['patho']; ?> ; Distortion Name: <?php echo $_SESSION['type']; ?>&nbsp;</span>
       </div>
     </div>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>

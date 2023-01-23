@@ -7,7 +7,7 @@ include 'getImage.php';
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
         case 'next':
-            nextImageLoad($_SESSION['imageRef']);
+            nextImageLoad($_SESSION['imageLevel4']);
             // session current imageRef
             
             break;
@@ -18,35 +18,37 @@ if (isset($_POST['action'])) {
 function nextImageLoad($imageRef) {
     // set flag is continue to find the next image
     $flag = false;
-    // get the list of images
-    list($ref_images, $dist_images) = getImages();
-
-    // // show the imageRef
-    // echo $imageRef;
     
     // find the index of the current image
-    $index = array_search($imageRef, $ref_images);
+    $index = array_search($imageRef, $_SESSION['imagelist']);
 
     // if the current image is the last image, update flag to true and set the index to 0
-    if ($index == count($ref_images) - 1) {
+    if ($index == count($_SESSION['imagelist']) - 1) {
         $flag = true;
         $index = 0;
     }
-    // get the next image
-    $next_image = $ref_images[$index + 1];
-    $_SESSION['imageRef'] = $next_image;
+    // $_SESSION['imageRef'] = $next_image;
     $_SESSION['imageNumExp'] += 1;
     // get the image with the same name as the next image + 4 levels
-    $imageLevel1 = findImage($next_image, $dist_images, 1);
-    $imageLevel2 = findImage($next_image, $dist_images, 2);
-    $imageLevel3 = findImage($next_image, $dist_images, 3);
-    $imageLevel4 = findImage($next_image, $dist_images, 4);
+    $imageLevel1 = $_SESSION['imagelist'][$index + 1];
+    $imageLevel2 = $_SESSION['imagelist'][$index + 2];
+    $imageLevel3 = $_SESSION['imagelist'][$index + 3];
+    $imageLevel4 = $_SESSION['imagelist'][$index + 4];
+
+    // update the session variables
+    $_SESSION['imagelevel1'] = $imageLevel1;
+    $_SESSION['imagelevel2'] = $imageLevel2;
+    $_SESSION['imagelevel3'] = $imageLevel3;
+    $_SESSION['imagelevel4'] = $imageLevel4;
+
+    list($patho, $kind) = getDistortion($_SESSION['imagelevel1']);
+
+    $_SESSION['patho'] = $patho;
+    $_SESSION['kind'] = $kind;
+
+    
 
     // return the next image and the 4 levels
-    echo json_encode(array( 'num' => $_SESSION['imageNumExp'] ,'imageRef' => $next_image, 'imageLevel1' => $imageLevel1, 'imageLevel2' => $imageLevel2, 'imageLevel3' => $imageLevel3, 'imageLevel4' => $imageLevel4, 'flag' => $flag));
+    echo json_encode(array( 'num' => $_SESSION['imageNumExp'], 'patho' => $patho, 'kind' => $kind , 'imageLevel1' => $imageLevel1, 'imageLevel2' => $imageLevel2, 'imageLevel3' => $imageLevel3, 'imageLevel4' => $imageLevel4, 'flag' => $flag));
     
 }
-
-
-?>
-            

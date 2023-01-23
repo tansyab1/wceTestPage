@@ -1,6 +1,6 @@
 function nextImageTest() {
     // get the value of the image in visualTest.php
-    var imageRef = document.getElementById('imageRef');
+    // var imageRef = document.getElementById('imageRef');
     var imageLevel1 = document.getElementById('imageLevel1');
     var imageLevel2 = document.getElementById('imageLevel2');
     var imageLevel3 = document.getElementById('imageLevel3');
@@ -15,7 +15,7 @@ function nextImageTest() {
     $.ajax({
         type: "POST",
         url: "nextImage.php",
-        data: { "action": "next"},
+        data: { "action": "next" },
         success: function (data) {
             console.log(data);
             // extract the data from the function php
@@ -26,8 +26,10 @@ function nextImageTest() {
 
             // get value from flag
             var flag = data['flag'];
-            // get value from imageRef
-            var imageRef_data = data['imageRef'];
+            // get value from patho
+            var patho = data['patho'];
+            // get value from kind
+            var kind = data['kind'];
             // get value from imageLevel1
             var imageLevel1_data = data['imageLevel1'];
             // get value from imageLevel2
@@ -38,7 +40,7 @@ function nextImageTest() {
             var imageLevel4_data = data['imageLevel4'];
 
             // set the value of imageRef
-            imageRef.src = imageRef_data;
+            // imageRef.src = imageRef_data;
             // set the value of imageLevel1
             imageLevel1.src = imageLevel1_data;
             // set the value of imageLevel2
@@ -49,7 +51,8 @@ function nextImageTest() {
             imageLevel4.src = imageLevel4_data;
 
             // set the value of numExp
-            numExp.innerHTML = num + "/4";
+            numExp.innerHTML = num + "/56";
+            type.innerHTML = "Image: " + patho + "; Distortion Name: " + kind + "&nbsp;";
 
             // show the value of flag in console
 
