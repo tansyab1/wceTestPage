@@ -6,6 +6,7 @@ function nextImageTest() {
     var imageLevel3 = document.getElementById('imageLevel3');
     var imageLevel4 = document.getElementById('imageLevel4');
     var numExp = document.getElementById('numExp');
+    var type = document.getElementById('type');
 
     // show the numExp to console
     // console.log(numExp);
