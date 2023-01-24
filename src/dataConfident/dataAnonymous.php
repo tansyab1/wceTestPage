@@ -61,7 +61,7 @@ session_start();
                   ></path>
                 </svg>
               </div>
-              <a href="/logout.php">
+              <a href="/~tansy.nguyen/logout.php">
             <img alt="logo" src="/~tansy.nguyen/images/logout.png" class="home-image1" />
           </a>
             </div>

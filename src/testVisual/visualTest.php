@@ -84,25 +84,25 @@ $_SESSION['imageNumExp'] = 1;
           <img
             alt="image"
             id = "imageLevel1"
-            src= <?php echo $_SESSION['imagelevel1']; ?>
+            src= "<?php echo $_SESSION['imagelevel1']; ?>"
             class="home-image"
           />
           <img
             alt="image"
             id = "imageLevel2"
-            src= <?php echo $_SESSION['imagelevel2']; ?>
+            src= "<?php echo $_SESSION['imagelevel2']; ?>"
             class="home-image1"
           />
           <img
             alt="image"
             id = "imageLevel3"
-            src= <?php echo $_SESSION['imagelevel3']; ?>
+            src= "<?php echo $_SESSION['imagelevel3']; ?>"
             class="home-image2"
           />
           <img
             alt="image"
             id = "imageLevel4"
-            src= <?php echo $_SESSION['imagelevel4']; ?>
+            src= "<?php echo $_SESSION['imagelevel4']; ?>"
             class="home-image3"
           />
           </div>
@@ -110,7 +110,7 @@ $_SESSION['imageNumExp'] = 1;
             <div class="home-container4">
             <button id="nextImageButton" class="home-next button">Next</button>
             </div>
-            <span id="numExp" class="home-page"> <?php echo $_SESSION['imageNumExp']; ?>/4 </span>
+            <span id="numExp" class="home-page"> <?php echo $_SESSION['imageNumExp']; ?>/56 </span>
             <div class="home-arrow">
               <dangerous-html
                 html="<style type='text/css'>
@@ -152,14 +152,14 @@ $_SESSION['imageNumExp'] = 1;
             </div>
             <div class="home-container5">
               <span class="home-instruction">
-                <span>Please note the difference between images.&nbsp;</span>
+                <span>Please note the difference between images and the type of distortions.&nbsp;</span>
                 <br />
                 <span>The distortion is strengthened from left to right.</span>
               </span>
             </div>
           </div>
         </div>
-        <span id="type" class="home-text3">Image: <?php echo $_SESSION['patho']; ?> ; Distortion Name: <?php echo $_SESSION['type']; ?>&nbsp;</span>
+        <span id="type" class="home-text3">Image: <?php echo $_SESSION['patho']; ?>; Distortion Name: <?php echo $_SESSION['type']; ?>&nbsp;</span>
       </div>
     </div>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>

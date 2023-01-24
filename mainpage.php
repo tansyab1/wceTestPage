@@ -30,6 +30,7 @@ if (!isset($_SESSION['username'])) {
     echo "Error creating table: " . mysqli_error($conn);
   }
   $_SESSION['currentID'] = 1;
+  $_SESSION['lastID'] = 1;
 
   // check if table is empty or not
   $sql = "SELECT * FROM `$id`";
@@ -76,6 +77,7 @@ if (!isset($_SESSION['username'])) {
     // last video id 
     $last_id = $row['id'];
     $_SESSION['currentID'] = $last_id;
+    $_SESSION['lastID'] = $last_id;
     // echo $last_id;
     
     // get list of videos from the database

@@ -1,5 +1,10 @@
 <?php
 session_start();
+// if the current last row is not zero, then the user has already submitted a colour test, so redirect them to the instructions page
+if ($_SESSION['lastID'] != 1) {
+  header("Location: /~tansy.nguyen/src/instruction/experimentInstruction.php");
+  exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -219,11 +224,11 @@ session_start();
           <span></span>
           <span></span>
         </span>
-        <a href="/~tansy.nguyen/src/ishihara_test/ishihara.php" target="_parent"><button class="home-button button">Yes</button></a>
+        <a href="/~tansy.nguyen/src/ishihama_test/ishihara.php" target="_parent"><button class="home-button button">Yes</button></a>
         <span class="home-text15">
-          <span class="home-text16">I accept</span>
-          <span class="home-text17">to</span>
-          <span class="home-text18">process I</span>
+          <span class="home-text16">I</span>
+          <span class="home-text17">accept</span>
+          <span class="home-text18"> to process the Ishihara Test</span>
           <br />
         </span>
       </div>

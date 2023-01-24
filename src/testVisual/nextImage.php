@@ -7,7 +7,7 @@ include 'getImage.php';
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
         case 'next':
-            nextImageLoad($_SESSION['imageLevel4']);
+            nextImageLoad($_SESSION['imagelevel4']);
             // session current imageRef
             
             break;
@@ -30,7 +30,7 @@ function nextImageLoad($imageRef) {
     // $_SESSION['imageRef'] = $next_image;
     $_SESSION['imageNumExp'] += 1;
     // get the image with the same name as the next image + 4 levels
-    $imageLevel1 = $_SESSION['imagelist'][$index + 1];
+    $imageLevel1 = $_SESSION['imagelist'][$index+1];
     $imageLevel2 = $_SESSION['imagelist'][$index + 2];
     $imageLevel3 = $_SESSION['imagelist'][$index + 3];
     $imageLevel4 = $_SESSION['imagelist'][$index + 4];
@@ -49,6 +49,6 @@ function nextImageLoad($imageRef) {
     
 
     // return the next image and the 4 levels
-    echo json_encode(array( 'num' => $_SESSION['imageNumExp'], 'patho' => $patho, 'kind' => $kind , 'imageLevel1' => $imageLevel1, 'imageLevel2' => $imageLevel2, 'imageLevel3' => $imageLevel3, 'imageLevel4' => $imageLevel4, 'flag' => $flag));
+    echo json_encode(array('num' => $_SESSION['imageNumExp'], 'patho' => $patho, 'kind' => $kind , 'imageLevel1' => $imageLevel1, 'imageLevel2' => $imageLevel2, 'imageLevel3' => $imageLevel3, 'imageLevel4' => $imageLevel4, 'flag' => $flag));
     
 }

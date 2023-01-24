@@ -1,11 +1,11 @@
-function nextImageTest() {
+function nextImageTest(result, resultNumCorrect) {
     // get the value of the image in visualTest.php
     var imageRef = document.getElementById('imageRef');
     var numExp = document.getElementById('numExp');
     var num = document.querySelector("input").valueAsNumber;
 
-    // add value of num to array resultNum
-    $_SESSION['resultNum'].push(num);
+    // // add value of num to array resultNum
+    // $_SESSION['resultNum'].push(num);
 
 
     // show the numExp to console
@@ -16,7 +16,7 @@ function nextImageTest() {
     $.ajax({
         type: "POST",
         url: "nextImage.php",
-        data: { "action": "next"},
+        data: { "action": "next", "num": num},
         success: function (data) {
             console.log(data);
             // extract the data from the function php
@@ -30,11 +30,13 @@ function nextImageTest() {
             // get value from imageRef
             var imageRef_data = data['imageRef'];
 
+            var resultNumCorrect = data['numCorrect'];
+
             // set the value of imageRef
             imageRef.src = imageRef_data;
 
             // set the value of numExp
-            numExp.innerHTML = "Plate"+ num + "/38";
+            numExp.innerHTML = "Plate "+ num + "/38";
 
             // show the value of flag in console
 
@@ -42,22 +44,22 @@ function nextImageTest() {
             // and load the page videoPlayer.php
             if (flag == true) {
                 
-                // compare the resultNum with the resultNumCorrect
-                var resultNum = $_SESSION['resultNum'];
-                var result = $_SESSION['resultNumCorrect'];
+                // // compare the resultNum with the resultNumCorrect
+                // var resultNum = $_SESSION['resultNum'];
+                // var result = $_SESSION['resultNumCorrect'];
 
-                // compart the resultNum with the result index by index and count the number of correct answers
-                var resultNumCorrect = 0;
-                for (var i = 0; i < resultNum.length; i++) {
-                    if (resultNum[i] == result[i]) {
-                        resultNumCorrect++;
-                    }
-                }
+                // // compart the resultNum with the result index by index and count the number of correct answers
+                // var resultNumCorrect = 0;
+                // for (var i = 0; i < resultNum.length; i++) {
+                //     if (resultNum[i] == result[i]) {
+                //         resultNumCorrect++;
+                //     }
+                // }
 
                 // if the accuracy is less than 70%, show the alert message and load the page videoPlayer.php
-                if (resultNumCorrect.length < 26) {
+                if (resultNumCorrect < 26) {
                     alert("Your accuracy is less than 70%, could you please try again.");
-                    window.location.href = "/~tansy.nguyen/src/ishihama_test/ishiharaTest.php";
+                    window.location.href = "/~tansy.nguyen/src/visual/colorVisual.php";
                 } else {
                     alert("You have passed the Ishihara Test, thank you for your participation. Please click OK to continue to the next step.");
                     window.location.href = "/~tansy.nguyen/src/dataConfident/dataAnonymous.php";
