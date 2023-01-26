@@ -210,7 +210,7 @@ session_start();
     }
 
     .rad-input:checked~.rad-text {
-        color: hsl(0, 0%, 66%);
+        color: hsl(0, 0%, 90%);
     }
 
 

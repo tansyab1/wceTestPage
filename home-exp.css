@@ -121,7 +121,7 @@ a {
 .home-page {
   top: 0px;
   left: 0px;
-  color: rgb(169, 169, 169);
+  color: hsl(0, 0%, 90%);
   bottom: 0px;
   height: var(--dl-size-size-xsmall);
   margin: auto;
@@ -133,7 +133,7 @@ a {
 .home-play {
   top: 0px;
   left: 400px;
-  color: rgb(169, 169, 169);
+  color: hsl(0, 0%, 90%);
   width: auto;
   bottom: 0px;
   height: var(--dl-size-size-small);
@@ -153,7 +153,7 @@ a {
 .home-stop {
   top: 0px;
   left: 500px;
-  color: rgb(169, 169, 169);
+  color: hsl(0, 0%, 90%);
   width: auto;
   bottom: 0px;
   height: var(--dl-size-size-small);
@@ -162,7 +162,7 @@ a {
   font-size: 24px;
   text-align: center;
   transition: 0.3s;
-  border-color: #b1adad;
+  border-color: hsl(0, 0%, 90%);
   background-color: transparent;
 }
 
@@ -202,7 +202,7 @@ a {
 }
 
 .home-instruction {
-  color: rgb(169, 169, 169);
+  color: hsl(0, 0%, 90%);
   font-size: 16px;
   align-self: center;
   margin-top: var(--dl-space-space-halfunit);
@@ -229,7 +229,7 @@ a {
 
 .home-next {
   top: 0px;
-  color: rgb(169, 169, 169);
+  color: hsl(0, 0%, 90%);
   right: 0px;
   width: auto;
   bottom: 0px;
@@ -239,7 +239,7 @@ a {
   font-size: 24px;
   text-align: center;
   transition: 0.3s;
-  border-color: #b1adad;
+  border-color: hsl(0, 0%, 90%);
   background-color: transparent;
 }
 
@@ -263,7 +263,7 @@ a {
 .home-text3 {
   top: 41px;
   left: 0px;
-  color: #a9a9a9;
+  color: hsl(0, 0%, 90%);
   right: 0px;
   margin: auto;
   position: absolute;
@@ -279,7 +279,7 @@ a {
 .home-text4 {
   top: 41px;
   left: 0px;
-  color: rgb(169, 169, 169);
+  color: hsl(0, 0%, 90%);
   right: 0px;
   margin: auto;
   position: absolute;
@@ -348,7 +348,7 @@ a {
   }
 
   .home-next {
-    color: rgb(169, 169, 169);
+    color: hsl(0, 0%, 90%);
     right: var(--dl-space-space-sixunits);
     font-size: 24px;
     background-color: transparent;
