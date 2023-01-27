@@ -220,7 +220,7 @@ if (!isset($_SESSION['username'])) {
                 </li>
                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="mainpage.html#sec-a668">About</a>
                 </li>
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="./src/visual/colorVisual.php">Start Experiment</a>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="./src/browsers/browser.php">Start Experiment</a>
                 </li>
                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="mainpage.html#sec-8043">Contact</a>
                 </li>
@@ -240,7 +240,7 @@ if (!isset($_SESSION['username'])) {
       <img src="images/laga-l2ti.png" alt="" class="u-align-center u-image u-image-contain u-image-default u-image-1" data-image-width="217" data-image-height="193">
       <h1 class="u-custom-font u-font-playfair-display u-text u-text-1">Wireless Capsule Endoscopy</h1>
       <p class="u-align-center u-text u-text-2"> Thank you for taking the time to complete this experiment. We truly value the information you will provide. Your responses will contribute to the development and advancement of new quality assessment techniques for wireless capsule endoscopy images.</p>
-      <a href="./src/visual/colorVisual.php" class="u-align-center u-btn u-btn-round u-button-style u-hover-feature u-hover-palette-1-light-2 u-palette-1-light-3 u-radius-50 u-btn-1" data-animation-name="customAnimationIn" data-animation-duration="1000"><span class="u-icon"><svg class="u-svg-content" viewBox="0 0 30.727 30.727" x="0px" y="0px" style="width: 1em; height: 1em;">
+      <a href="./src/browsers/browser.php" class="u-align-center u-btn u-btn-round u-button-style u-hover-feature u-hover-palette-1-light-2 u-palette-1-light-3 u-radius-50 u-btn-1" data-animation-name="customAnimationIn" data-animation-duration="1000"><span class="u-icon"><svg class="u-svg-content" viewBox="0 0 30.727 30.727" x="0px" y="0px" style="width: 1em; height: 1em;">
             <path d="M29.994,10.183L15.363,24.812L0.733,10.184c-0.977-0.978-0.977-2.561,0-3.536c0.977-0.977,2.559-0.976,3.536,0   l11.095,11.093L26.461,6.647c0.977-0.976,2.559-0.976,3.535,0C30.971,7.624,30.971,9.206,29.994,10.183z"></path>
           </svg><img></span>&nbsp; Start Experiment
       </a>

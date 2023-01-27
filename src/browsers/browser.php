@@ -1,143 +1,43 @@
-<?php
-session_start();
-// if the current last row is not zero, then the user has already submitted a colour test, so redirect them to the instructions page
-if ($_SESSION['lastID'] != 1) {
-  header("Location: /~tansy.nguyen/src/instruction/experimentInstruction.php");
-  exit();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Notification Visual</title>
+    <meta property="og:title" content="Notification Visual" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
 
-<head>
-  <title>Colour Test</title>
-  <link rel="icon" href="/~tansy.nguyen/images/logoLAGA.png" type="image/x-icon">
-  <meta property="og:title" content="Notification Visual" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta charset="utf-8" />
-  <meta property="twitter:card" content="summary_large_image" />
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
 
-  <style data-tag="reset-style-sheet">
-    html {
-      line-height: 1.15;
-    }
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
 
-    body {
-      margin: 0;
-    }
+      }
+    </style>
 
-    * {
-      box-sizing: border-box;
-      border-width: 0;
-      border-style: solid;
-    }
+    <!--This is the head section-->
+    <!-- <style> ... </style> -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./home.css" rel="stylesheet" />
 
-    p,
-    li,
-    ul,
-    pre,
-    div,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    figure,
-    blockquote,
-    figcaption {
-      margin: 0;
-      padding: 0;
-    }
-
-    button {
-      background-color: transparent;
-    }
-
-    button,
-    input,
-    optgroup,
-    select,
-    textarea {
-      font-family: inherit;
-      font-size: 100%;
-      line-height: 1.15;
-      margin: 0;
-    }
-
-    button,
-    select {
-      text-transform: none;
-    }
-
-    button,
-    [type="button"],
-    [type="reset"],
-    [type="submit"] {
-      -webkit-appearance: button;
-    }
-
-    button::-moz-focus-inner,
-    [type="button"]::-moz-focus-inner,
-    [type="reset"]::-moz-focus-inner,
-    [type="submit"]::-moz-focus-inner {
-      border-style: none;
-      padding: 0;
-    }
-
-    button:-moz-focus,
-    [type="button"]:-moz-focus,
-    [type="reset"]:-moz-focus,
-    [type="submit"]:-moz-focus {
-      outline: 1px dotted ButtonText;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: inherit;
-    }
-
-    input {
-      padding: 2px 4px;
-    }
-
-    img {
-      display: block;
-    }
-
-    html {
-      scroll-behavior: smooth
-    }
-  </style>
-  <style data-tag="default-style-sheet">
-    html {
-      font-family: Inter;
-      font-size: 16px;
-    }
-
-    body {
-      font-weight: 400;
-      font-style: normal;
-      text-decoration: none;
-      text-transform: none;
-      letter-spacing: normal;
-      line-height: 1.15;
-      color: var(--dl-color-gray-black);
-      background-color: var(--dl-color-gray-white);
-
-    }
-  </style>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" data-tag="font" />
-  <!--This is the head section-->
-  <!-- <style> ... </style> -->
-  <link rel="stylesheet" href="./style.css" />
-</head>
-
-<body>
-  <div>
-    <link href="./home.css" rel="stylesheet" />
-
-    <div class="home-container">
+      <div class="home-container">
       <div class="home-container1">
         <header data-role="Header" class="home-header">
           <img alt="logo" src="/~tansy.nguyen/images/laga-l2ti.png" class="home-image" />
@@ -197,44 +97,35 @@ if ($_SESSION['lastID'] != 1) {
 
         </div>
       </footer>
-      <div class="home-banner">
-        <h1 class="home-text01">About your Colour Vision</h1>
-        <span class="home-text02">
-          <span class="home-text03">
-            It is important that you have normal colour vision in order to
-            complete this experiment.
+        <div class="home-banner">
+          <h1 class="home-text01">Web browser</h1>
+          <img
+            src="./public/playground_assets/browser-300h.png"
+            alt="image"
+            class="home-image3"
+          />
+          <span class="home-text02">
+            <span>Please use one of the following web browsers:</span>
+            <br />
+            <br />
+            <span>Google Chrome, Firefox, Microsoft Edge.</span>
+            <br />
+            <span>Please do NOT use the Apple Safari.</span>
+            <br />
+            <br />
+            <span>
+              (If you are using the Apple Safari, please switch to other
+              browser.)
+            </span>
           </span>
-          <br class="home-text04" />
-          <span class="home-text05">
-            Some people are 'colour vision deficient (CD' or 'colour blind' -
-            if this is your case, then please do not proceed. To be sure of this,
-            please process the following Ishihara 38 plates test:
-          </span>
-          <br class="home-text06" />
-          <span class="home-text07">
-            www.enchroma.co.uk/pages/colour-blind-test
-          </span>
-          <br class="home-text08" />
-          <br class="home-text09" />
-          <span class="home-text10">
-            To the best of your knowledge and belief, do you accept
-          </span>
-          <span class="home-text11">to process</span>
-          <span class="home-text12">the Ishihara test?</span>
-          <span></span>
-          <span></span>
-        </span>
-        <a href="/~tansy.nguyen/src/ishihama_test/ishihara.php" target="_parent"><button class="home-button button">Yes</button></a>
-        <span class="home-text15">
-          <span class="home-text16">I</span>
-          <span class="home-text17">accept</span>
-          <span class="home-text18"> to process the Ishihara Test</span>
-          <br />
-        </span>
+          <a href="/~tansy.nguyen/src/visual/colorVisual.php" target="_parent"><button class="home-button button">I understand</button> </a>
+        </div>
       </div>
     </div>
-  </div>
-  <script data-section-id="header" src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
-</body>
-
+    <script
+      data-section-id="header"
+      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
+    ></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </body>
 </html>
