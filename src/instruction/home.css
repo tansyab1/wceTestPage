@@ -251,6 +251,10 @@
 .home-text35 {
   font-weight: 700;
 }
+.home-text39 {
+  font-weight: 700;
+  color: red;
+}
 .home-button {
   font-size: 24px;
   margin-top: var(--dl-space-space-twounits);
