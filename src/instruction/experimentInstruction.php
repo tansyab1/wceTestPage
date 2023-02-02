@@ -218,7 +218,7 @@ session_start();
             rating
           </span>
           <span class="home-text19">1 out of 4</span>
-          <span>video quality levels (from "</span>
+          <span>levels of the quality difference between 2 videos (from "</span>
           <span class="home-text21">Hardly Visible</span>
           <span>" to "</span>
           <span class="home-text23">Very Annoying</span>
