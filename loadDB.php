@@ -13,6 +13,13 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+// if connection is successful, then export all tables
+// if (mysqli_ping($conn)) {
+//     echo 'Connection OK' . mysqli_stat($conn);
+// } else {
+//     echo 'Error: ' . mysqli_error($conn);
+// }
+
 // Get all table names from the database
 $result = mysqli_query($conn, 'SHOW TABLES');
 $tables = array();
@@ -20,35 +27,48 @@ while ($row = mysqli_fetch_row($result)) {
     $tables[] = $row[0];
 }
 
+// // show all tables names
+// echo "<pre>";
+// print_r($tables);
+// echo "</pre>";
+
 // Loop through each table and export its data to a CSV file in folder called "exports"
-// check if folder exists 
-if (!file_exists('exports')) {
-    mkdir('exports', 0777, true);
-}
+// check if folder exists in current directory, if not create it
+
+// if (!is_dir('exports')) {
+//     mkdir('exports');
+//     echo "Folder does not exist, creating folder...";
+// }
+
+// // show the notification message if folder was created
+// if (is_dir('exports')) {
+//     echo "Folder created successfully!";
+// }
+
 foreach ($tables as $table) {
-    // Create file name
-    $filename = 'exports/' . $table . '.csv';
-
-    // Open file
+    // save table to test.csv file in exports folder
+    $filename = 'exports/' . 'test.csv';
     $fp = fopen($filename, 'w');
-
-    // Write headers to file
-    $headers = array();
-    $result = mysqli_query($conn, 'SHOW COLUMNS FROM ' . $table);
-    while ($row = mysqli_fetch_assoc($result)) {
-        $headers[] = $row['Field'];
+    // check if file exists
+    if (file_exists($filename)) {
+        echo "File exists, writing to file...";
     }
-    fputcsv($fp, $headers);
-
-    // Get data from table
-    $result = mysqli_query($conn, 'SELECT * FROM ' . $table);
-
-    // Loop through data and write to file
-    while ($row = mysqli_fetch_assoc($result)) {
+    // check if file is writable
+    if (is_writable($filename)) {
+        echo "File is writable...";
+    }
+    // write the table headers to the file
+    $header = mysqli_query($conn, "SHOW COLUMNS FROM " . $table);
+    while ($row = mysqli_fetch_row($header)) {
+        $header_row[] = $row[0];
+    }
+    fputcsv($fp, $header_row);
+    // write all the data to the file
+    $data = mysqli_query($conn, "SELECT * FROM " . $table);
+    while ($row = mysqli_fetch_row($data)) {
         fputcsv($fp, $row);
     }
-
-    // Close file
+    // close the file
     fclose($fp);
 }
 
