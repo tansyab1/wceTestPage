@@ -27,53 +27,206 @@ while ($row = mysqli_fetch_row($result)) {
     $tables[] = $row[0];
 }
 
-// // show all tables names
-// echo "<pre>";
-// print_r($tables);
-// echo "</pre>";
+// show data table `4`, `5`, `6`, `8`, `12`, `27`, `28`, `32`, `33`, `34`, `35`, `36`, `38` 
 
-// Loop through each table and export its data to a CSV file in folder called "exports"
-// check if folder exists in current directory, if not create it
+// show each table data
 
-// if (!is_dir('exports')) {
-//     mkdir('exports');
-//     echo "Folder does not exist, creating folder...";
-// }
+$query = "SELECT * FROM `4`";
+echo 'Table: 4<br>';
 
-// // show the notification message if folder was created
-// if (is_dir('exports')) {
-//     echo "Folder created successfully!";
-// }
+// execute the query
+$result = mysqli_query($conn, $query);
 
-foreach ($tables as $table) {
-    // save table to test.csv file in exports folder
-    $filename = 'exports/' . 'test.csv';
-    $fp = fopen($filename, 'w');
-    // check if file exists
-    if (file_exists($filename)) {
-        echo "File exists, writing to file...";
-    }
-    // check if file is writable
-    if (is_writable($filename)) {
-        echo "File is writable...";
-    }
-    // write the table headers to the file
-    $header = mysqli_query($conn, "SHOW COLUMNS FROM " . $table);
-    while ($row = mysqli_fetch_row($header)) {
-        $header_row[] = $row[0];
-    }
-    fputcsv($fp, $header_row);
-    // write all the data to the file
-    $data = mysqli_query($conn, "SELECT * FROM " . $table);
-    while ($row = mysqli_fetch_row($data)) {
-        fputcsv($fp, $row);
-    }
-    // close the file
-    fclose($fp);
+// loop through the results
+while ($row = mysqli_fetch_array($result)) {
+    // show the results of all columns
+    echo $row['videoName'] . ' ' . $row['value'] . ' ' . $row['timeProcess'] . '<br>';
 }
+
+$query = "SELECT * FROM `5`";
+echo 'Table: 5<br>';
+
+// execute the query
+$result = mysqli_query($conn, $query);
+
+// loop through the results
+while ($row = mysqli_fetch_array($result)) {
+    // show the results of all columns
+    echo $row['videoName'] . ' ' . $row['value'] . ' ' . $row['timeProcess'] . '<br>';
+}
+
+$query = "SELECT * FROM `6`";
+echo 'Table: 6<br>';
+
+// execute the query
+
+$result = mysqli_query($conn, $query);
+
+// loop through the results
+while ($row = mysqli_fetch_array($result)) {
+    // show the results of all columns
+    echo $row['videoName'] . ' ' . $row['value'] . ' ' . $row['timeProcess'] . '<br>';
+}
+
+$query = "SELECT * FROM `8`";
+echo 'Table: 8<br>';
+
+// execute the query
+
+$result = mysqli_query($conn, $query);
+
+// loop through the results
+while ($row = mysqli_fetch_array($result)) {
+    // show the results of all columns
+    echo $row['videoName'] . ' ' . $row['value'] . ' ' . $row['timeProcess'] . '<br>';
+}
+
+$query = "SELECT * FROM `12`";
+
+echo 'Table: 12<br>';
+
+// execute the query
+
+$result = mysqli_query($conn, $query);
+
+// loop through the results
+while ($row = mysqli_fetch_array($result)) {
+    // show the results of all columns
+    echo $row['videoName'] . ' ' . $row['value'] . ' ' . $row['timeProcess'] . '<br>';
+}
+
+$query = "SELECT * FROM `27`";
+
+echo 'Table: 27<br>';
+
+// execute the query
+
+$result = mysqli_query($conn, $query);
+
+// loop through the results
+
+while ($row = mysqli_fetch_array($result)) {
+    // show the results of all columns
+    echo $row['videoName'] . ' ' . $row['value'] . ' ' . $row['timeProcess'] . '<br>';
+}
+
+$query = "SELECT * FROM `28`";
+
+echo 'Table: 28<br>';
+
+// execute the query
+
+$result = mysqli_query($conn, $query);
+
+// loop through the results
+
+while ($row = mysqli_fetch_array($result)) {
+    // show the results of all columns
+    echo $row['videoName'] . ' ' . $row['value'] . ' ' . $row['timeProcess'] . '<br>';
+}
+
+$query = "SELECT * FROM `32`";
+
+echo 'Table: 32<br>';
+
+// execute the query
+
+$result = mysqli_query($conn, $query);
+
+// loop through the results
+
+while ($row = mysqli_fetch_array($result)) {
+    // show the results of all columns
+    echo $row['videoName'] . ' ' . $row['value'] . ' ' . $row['timeProcess'] . '<br>';
+}
+
+$query = "SELECT * FROM `33`";
+
+echo 'Table: 33<br>';
+
+// execute the query
+
+$result = mysqli_query($conn, $query);
+
+// loop through the results
+
+while ($row = mysqli_fetch_array($result)) {
+    // show the results of all columns
+    echo $row['videoName'] . ' ' . $row['value'] . ' ' . $row['timeProcess'] . '<br>';
+}
+
+$query = "SELECT * FROM `34`";
+
+echo 'Table: 34<br>';
+
+// execute the query
+
+$result = mysqli_query($conn, $query);
+
+// loop through the results
+
+while ($row = mysqli_fetch_array($result)) {
+    // show the results of all columns
+    echo $row['videoName'] . ' ' . $row['value'] . ' ' . $row['timeProcess'] . '<br>';
+
+}
+
+$query = "SELECT * FROM `35`";
+
+echo 'Table: 35<br>';
+
+// execute the query
+
+$result = mysqli_query($conn, $query);
+
+// loop through the results
+
+while ($row = mysqli_fetch_array($result)) {
+    // show the results of all columns
+
+    echo $row['videoName'] . ' ' . $row['value'] . ' ' . $row['timeProcess'] . '<br>';
+
+}
+
+$query = "SELECT * FROM `36`";
+
+echo 'Table: 36<br>';
+
+// execute the query
+
+$result = mysqli_query($conn, $query);
+
+// loop through the results
+
+while ($row = mysqli_fetch_array($result)) {
+    // show the results of all columns
+
+    echo $row['videoName'] . ' ' . $row['value'] . ' ' . $row['timeProcess'] . '<br>';
+
+}
+
+$query = "SELECT * FROM `38`";
+
+echo 'Table: 38<br>';
+
+// execute the query
+
+$result = mysqli_query($conn, $query);
+
+// loop through the results
+
+while ($row = mysqli_fetch_array($result)) {
+    // show the results of all columns
+
+    echo $row['videoName'] . ' ' . $row['value'] . ' ' . $row['timeProcess'] . '<br>';
+
+}
+
+
+
 
 // Close connection
 mysqli_close($conn);
 
-echo "All tables exported successfully!";
+echo "All tables exported sussfully!";
 ?>
